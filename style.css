@@ -21,6 +21,25 @@ body {
     font-family: var(--font-family1);
     scroll-behavior: smooth;
 }
+
+.name__highlight {
+    display: inline-block;
+    position: relative;
+    z-index: 20;
+    /* color: black; */
+}
+
+.name__highlight::before {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    left: -3px;
+    width: 100%;
+    height: 50%;
+    background-color: rgba(166, 206, 57, 0.9);
+    z-index: -1;
+}
+
 /* section ++++++++++++++++++++++++++++++++++++++++*/
 section {
     padding: 1rem 2rem;
@@ -117,11 +136,10 @@ section {
         -webkit-backdrop-filter: blur(6px);
         background: rgba(0, 0, 0, 0.65);
         width: 100%;
-        height: 100%;
         left: 0;
-        top: 4.2rem;
+        top: 6rem;
         bottom: 0;
-        padding: 20px;
+        padding: 30px;
         transition: 1s;
         z-index: 99;
         text-align: center;
@@ -184,6 +202,12 @@ section {
 .Homecontent .btn:hover {
     background-color: #c1e266;
     /* padding: 10px 30px; */
+}
+
+@media screen and (max-width: 1440px) {
+    .Homecontent h1 {
+        font-size: 38px;
+    }
 }
 
 @media screen and (max-width: 1024px) {
@@ -347,7 +371,7 @@ section {
     background: #fff;
     border: none;
     border-radius: 10px;
-    height: 260px;
+    min-height: 260px;
     margin-bottom: 20px;
     overflow: hidden;
 }
@@ -507,11 +531,22 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    pointer-events: none;
+    gap: 50px;
+    overflow-x: auto;
+    padding: 20px;
+    /* scrollbar-width: thin; 
+    scrollbar-color: blue orange; */
 }
-#clients .clts a {
+/* #clients .clts::-webkit-scrollbar {
+    width: 6px;
+}
+#clients .cls::-webkit-scrollbar-track {
+    background: #dfd2d2bd;
+}
+#clients .cls::-webkit-scrollbar-thumb {
+    background: #3d1fe9;
+} */
+#clients .clts p {
     text-decoration: none;
     color: black;
     font-weight: bold;
@@ -531,48 +566,48 @@ section {
     }
 }
 /* Touch +++++++++++++++++++++++++++++++++++++*/
-#Touchs {
+#touchs {
     margin: 50px 200px;
     scroll-margin-top: 6rem;
 }
-#Touchs h1 {
+#touchs h1 {
     font-size: 2rem;
     margin-bottom: 30px;
 }
-#Touchs .tatchs {
+#touchs .tatchs {
     display: flex;
     justify-content: space-between;
 }
-#Touchs .tatchs .card {
+#touchs .tatchs .card {
     width: 30%;
     border: 1px solid var(--orange);
     padding: 20px 30px;
     border-radius: 10px;
 }
-#Touchs .tatchs .card:hover {
+#touchs .tatchs .card:hover {
     box-shadow: var(--box-shadow);
 }
-#Touchs .tatchs .card .title {
+#touchs .tatchs .card .title {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
 }
-#Touchs .tatchs .card .title i {
+#touchs .tatchs .card .title i {
     margin-right: 10px;
 }
 @media screen and (max-width: 1023px) {
-    #Touchs {
+    #touchs {
         margin: 20px 10px;
     }
-    #Touchs h1 {
+    #touchs h1 {
         font-size: 1.5rem;
     }
 }
 @media screen and (max-width: 767px) {
-    #Touchs .tatchs {
+    #touchs .tatchs {
         flex-wrap: wrap;
     }
-    #Touchs .tatchs .card {
+    #touchs .tatchs .card {
         width: 100%;
         margin-bottom: 10px;
     }
